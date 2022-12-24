@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import Registation from './Components/Registration'
+import Home from './Components/Home';
+import Login from './Components/Login';
+import Navbar from './Components/Header';
+import {Routes,Route} from 'react-router-dom'
+import Protected from './Components/Protected';
+import Game from './Components/Game/BigSquare';
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar/>
+    <Routes>
+    <Route path='/registration' element = {<Registation/>}/>
+    <Route path='/login' element = {<Login/>}/>
+    <Route path='/' element = {<Protected/>}>
+    <Route path='/' element = {<Home/>}/>
+    </Route>
+    <Route path='/game' element = {<Protected/>}>
+    <Route path='/game' element = {<Game/>}/>
+    </Route>
+    </Routes>
+
+    </>
   );
 }
 
