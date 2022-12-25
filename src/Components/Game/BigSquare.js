@@ -46,7 +46,7 @@ function BigSquare() {
 
   return (
     <div className="main-cont">
-    <h1 className="mt-5 head">Welcome {parseData.name}</h1>
+    <h1 className="head">Welcome {parseData.name}</h1>
     <div className="Container mb-5">
       {randomSquares.map((e, i) => {
         return (

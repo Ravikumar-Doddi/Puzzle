@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate ,NavLink} from "react-router-dom"
 import { useState } from "react";
 
 import './index.css'
@@ -88,7 +88,8 @@ const Home = () =>{
                     <input type="number" className="form-control" placeholder="Mobile" value={userDetails.phone} onChange = {readPhone}/><br/>
                    
                     
-                    <input type='submit' value = 'submit' className="btn btn-warning"/>
+                    <input type='submit' value = 'submit' className="btn btn-warning mb-3"/><br/>
+                    <NavLink to="/game"><button className="btn btn-info">Skip for this time</button></NavLink>
                     <br/>    
                     
                     
